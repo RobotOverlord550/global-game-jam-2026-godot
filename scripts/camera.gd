@@ -9,15 +9,12 @@ func _handle_player_following(delta: float) -> void:
 	if distance < 0.01:
 		return
 	
-	var pos_x = position.x
-	var pos_y = position.y
-	var player_pos_x = References.player.position.x
-	var player_pos_y = References.player.position.y
-	var x_distance = abs(pos_x - player_pos_x)
-	var y_distance = abs(pos_y - player_pos_y)
+	var player_pos = References.player.position
+	var x_distance = absf(position.x - player_pos.x)
+	var y_distance = absf(position.y - player_pos.y)
 	
-	position.x = move_toward(pos_x, player_pos_x, delta * follow_player_speed * x_distance)
-	position.y = move_toward(pos_y, player_pos_y, delta * follow_player_speed * y_distance)
+	position.x = move_toward(position.x, player_pos.x, delta * follow_player_speed * x_distance)
+	position.y = move_toward(position.y, player_pos.y, delta * follow_player_speed * y_distance)
 
 
 func _process(delta: float) -> void:
