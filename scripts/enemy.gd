@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 const movement_speed: float = 200
-const view_distance: float = 10000
-const player_repulsion_distance: float = 200
+const view_distance: float = 400
+const player_repulsion_distance: float = 175
 const player_repulsion_range: float = 0.2
 
 @export var mask: int = 0
@@ -22,6 +22,7 @@ func player_visible() -> bool:
 
 func _handle_player_chase() -> void:
 	if not player_visible():
+		velocity = Vector2.ZERO
 		return
 	
 	var player_pos = References.player.position	
