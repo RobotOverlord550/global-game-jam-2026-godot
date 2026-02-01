@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-const movement_speed: float = 200
-const view_distance: float = 400
-const player_repulsion_distance: float = 175
+const movement_speed: float = 180
+const view_distance: float = 500
+const player_repulsion_distance: float = 160
 const player_repulsion_range: float = 0.2
 
 @export var mask: int = 0
@@ -31,6 +31,7 @@ func _handle_player_chase() -> void:
 		velocity = Vector2.ZERO
 	elif distance_to_player < player_repulsion_distance:
 		velocity = distance_to_player / player_repulsion_distance * (position - player_pos).normalized()
+		get_tree().quit()
 	else:
 		velocity = position.direction_to(player_pos)
 	

@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://dxpdebf7otm4b"]
 
-[ext_resource type="Texture2D" uid="uid://btkwtiox6mjfo" path="res://addons/godot-prototype-texture/Vector/logo_512x512/logo_blue_512x512.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://d2752bxu2qmjo" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://jnhinenvjnpi" path="res://assets/textures/comedy_mask.png" id="2_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 250.07199
+radius = 1404.9626
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1503251616]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.05, 0.05)
 script = ExtResource("1_md0e3")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=3318439]
 shape = SubResource("CircleShape2D_md0e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953823754]
-texture = ExtResource("1_7p1mj")
+position = Vector2(-128, 140)
+texture = ExtResource("2_md0e3")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0ufknq7cpvi1"]
+
+[ext_resource type="Texture2D" uid="uid://rxr1pk3243tx" path="res://assets/textures/chair.png" id="1_i2o7u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fp06"]
+radius = 1077.0227
+
+[node name="Chair" type="StaticBody2D" unique_id=1266850678]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=189643338]
+texture = ExtResource("1_i2o7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915183511]
+position = Vector2(-13, 283)
+shape = SubResource("CircleShape2D_3fp06")
