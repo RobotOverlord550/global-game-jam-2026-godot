@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy3irfoydxm8e"]
+[gd_scene load_steps=4 format=3 uid="uid://cy3irfoydxm8e"]
 
+[ext_resource type="Texture2D" uid="uid://i2o6outxwf06" path="res://addons/godot-prototype-texture/Vector/checker_512x512/checker_orange_512x512.svg" id="1_pw63i"]
 [ext_resource type="PackedScene" uid="uid://bkoob3yfeuvcb" path="res://scenes/player.tscn" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://dyal3yytfg874" path="res://scripts/camera.gd" id="3_7ykc4"]
 
 [node name="MainScene" type="Node2D"]
 
+[node name="TestFloor" type="Sprite2D" parent="."]
+texture = ExtResource("1_pw63i")
+
 [node name="Player" parent="." instance=ExtResource("1_w2twt")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+script = ExtResource("3_7ykc4")

@@ -1,12 +1,11 @@
 extends StaticBody2D
 
 
-const movement_speed: float = 100
+const movement_speed: float = 200
 
 
 func _handle_input(delta: float) -> void:
 	if InputManager.movement_vector:
-		print("hi")
 		position += InputManager.movement_vector.normalized() * delta * movement_speed
 
 
